@@ -13,8 +13,6 @@ class Account {
         if(amount <= 0) throw new Error('Invalid amount');
         if (this.status !== 'active') throw new Error('Account not active');
         this.balance += amount;
-        console.log(`you deposit:`, amount);
-        console.log(`the total balance you have:`, this.balance)
     }
 
     public withdraw(amount: number){
@@ -22,8 +20,6 @@ class Account {
         if(this.status !== 'active') throw new Error('Accout not active');
         if(amount > this.balance) throw new Error('Insufficient funds');
         this.balance -= amount;
-        console.log(`you withdraw:`, amount)
-        console.log(`your balance now is:`, this.balance)
     }    
 
     public getBalance(): number{
